@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import logo from "../../assets/img/logo.png.png"
+import logo from "/img/logo.png.png"
 import Burger from "../menu/Burger"
 
 function Navbar() {

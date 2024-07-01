@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
-import hero from "../../assets/img/card.png"
+import hero from "/img/card.png"
 
 function Hero() {
   return (
