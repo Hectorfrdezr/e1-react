@@ -31,19 +31,28 @@ const CardInfo = styled.div`
     box-shadow: 0 5px 15px rgba(254, 254, 254, 0.1);
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
     width: 28%;
-    height: 400px;
+    height: 450px;
     cursor: pointer;
    
   &:hover{
     transform: translateY(-10px);
     background-image: linear-gradient(45deg, #2b292a, #090909);
     cursor: pointer;
-     }
-    @media(max-width:625px){
-      width: 50%;
-    }
+  }
+  @media(max-width:980px){
+    width: 30%;
+    height: 350px;
+  }
+  @media(max-width:703px){
+    width: 40%;
+    height: 350px;
+  }
+  @media(max-width:625px){
+    width: 50%;
+    height: 350px;
+  }
     @media(max-width:525px){
-      width: 80%;
+      width: 60%;
       height: 350px;
     }
 
@@ -69,11 +78,12 @@ const CardInfo = styled.div`
   .card-footer{
     text-align: center;
     margin: 12px;
+    
   }
   p{
     color: #fef6f6;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     @media(max-width:1024px){
           font-size: 14px;
         }
