@@ -49,7 +49,7 @@ const NavContainer = styled.nav`
     text-decoration-line: underline;
   }
   .menu{
-    @media(min-width: 768px){
+    @media(min-width: 778px){
         display: none;
     } 
   }
