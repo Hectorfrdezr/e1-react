@@ -97,6 +97,7 @@ const CardInfo = styled.div`
   span{
     color: #fef6f6;
     font-size: 20px;
+    font-weight: bold;
     @media(max-width:1024px){
           font-size: 18px;
         }
