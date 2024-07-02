@@ -1,54 +1,119 @@
 import React from 'react'
 import styled from "styled-components"
-import Card from "../card/Card"
+import pedido from "../../../public/img/pedido.png"
+
 function Productos() {
   return (
         <Product>
           <div className="container">
-              <h2>Productos</h2>
-              <div className="card-container">
-                    <Card title="Hamburgesa" description="150gr De Pechuga De Pollo Crispy Con Salsa Spicy, Pan Brioche De La Casa, Tomates Seco, Cebolla Morada, Queso Y Pesto" imgSrc="/img/th.png" precio="$6500"/>
-                    <Card title="Hot dog" description="Hot dog-cebolla-ensalada-papas y salsas" imgSrc="/img/th 2.png" precio="$3500"/>
-                    <Card title="Pepito" description="Carne en cuadritos, lechuga, tomate, cebolla, papa hilo, queso gauda, queso cheddar, tocino, ketchup, mostaza, mayonesa." imgSrc="/img/th 3.png" precio="$9000"/>
-                    <Card title="Club House" description="Pollo-huevo-lechuga-tomate-tocino-jamon-queso y salsa" imgSrc="/img/th 4.png" precio="$5500"/>
-                    <Card title="Fajita" description="Carne, mechada o pollo - tomate - choclo - lechuga - queso y guacamole más 1 salsa" imgSrc="/img/th 5.png" precio="$5500"/>
-                    <Card title="Patacon" description="Platano,pollo,carne ensalda y aderezos" imgSrc="/img/th 6.png" precio="$1200"/>
-                </div>
+            <div className="pedido-contain">
+            <img src={pedido} alt="" />
+            <div className="pedido-info">
+                <h3>ORDENAR NUNCA FUE TAN FACIL.</h3>
+                <h2>
+                  ¡Haz tu pedido con un click!
+                </h2>
+                <a>Ordenar</a>
+              </div>  
             </div>
-        </Product>
+          </div>
+        </Product> 
   )
 }
 
 const Product = styled.div`
   .container{
-    padding: 3rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .card-container{
-    padding: 3rem 1rem;
+  .pedido-contain{
+    padding: 2rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     max-width: 1200px;
+    text-align: center;
     gap: 2rem;
-     @media(max-width:625px){
-        flex-direction: column;
+    @media(max-width:980px){
+    h3{
+      font-size: 1rem;
+    }
+    h2{
+      font-size: 1rem;
+    }
+    img{
+      width: 32%;
+    }
+  }
+  @media(max-width:703px){
+   img{
+    width: 35%;
+   }
+   h3{
+    font-size: 1rem;
+   }
+   h2{
+    font-size: .9rem;
+    margin-bottom: 12px;
+   }
+  }
+  @media(max-width:625px){
+    img{
+      width: 35%;
+    }
+   
+  }
+    @media(max-width:525px){
+      img{
+        width: 100%;
       }
+      h3{
+        font-size: 14px;
+      }
+  }
+}
+  img{
+    width: 25%;
+    box-shadow: 0 5px 15px rgba(231, 233, 148, 0.932);
+    border-radius: 8px;
+  }
+  h3{
+    color: aliceblue;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  h3:hover{
+    color: #fcda30;
   }
   h2{
     color: aliceblue;
-    font-size: 2.5rem;
-    cursor: pointer;
   }
-  h2:hover{
-    color: #fcda30;
+  a{
+    
+    display: inline-block;
+                outline: 0;
+                cursor: pointer;
+                border: 2px solid #000;
+                border-radius: 8px;
+                color: #fff;
+                background: #000;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 28px;
+                padding: 12px 20px;
+                text-align:center;
+                transition-duration: .15s;
+                transition-property: all;
+                transition-timing-function: cubic-bezier(.4,0,.2,1);
+                &:hover{
+                    color: #000;
+                    background: rgb(255, 218, 87);
+                }            
   }
-   
-  
     
 `
 export default Productos

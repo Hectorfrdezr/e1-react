@@ -27,7 +27,6 @@ const Heroinfo = styled.div`
     background-size: contain;
     background-image: url(${hero});
     background-position: center center;
-    
     @media(max-width:980px){
           height: 400px;
       }

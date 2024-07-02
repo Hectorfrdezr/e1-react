@@ -11,9 +11,8 @@ function Navbar() {
             <img className='nav-logo' src={logo} alt="" />
             <div className='links'>
                 <a href="#">Inicio</a>
-                <a href="#">Categorías</a>
+                <a href="#">Ofertas</a>
                 <a href="#">Conócenos</a>
-                <a href="#">Contáctanos</a>
             </div>
             <div className="menu">
               <Burger/>
@@ -37,7 +36,11 @@ const NavContainer = styled.nav`
     align-items: center;
     justify-content: space-between;
     background-color: #141619;
-    padding: 0px 35px;
+    padding: 0px 45px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    height: 65px;
   }
   a{
     color: #fff;

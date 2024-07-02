@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 
-function Card({title , description , imgSrc,precio}){
+function Card({title , description , imgSrc,precio , btn}){
 
   return (
     <CardInfo>
@@ -13,8 +13,9 @@ function Card({title , description , imgSrc,precio}){
         </div>
         <div className="card-footer">
             <h3>{title}</h3>
-            <p>{description}</p> 
-            <span>{precio}</span>
+            <h4>{description}</h4> 
+            <p>{precio}</p>
+            <a>{btn}</a>
         </div>
         
     </CardInfo>
@@ -33,7 +34,6 @@ const CardInfo = styled.div`
     width: 28%;
     height: 450px;
     cursor: pointer;
-   
   &:hover{
     transform: translateY(-10px);
     background-image: linear-gradient(45deg, #2b292a, #090909);
@@ -41,19 +41,19 @@ const CardInfo = styled.div`
   }
   @media(max-width:980px){
     width: 30%;
-    height: 350px;
+    height: 420px;
   }
   @media(max-width:703px){
     width: 40%;
-    height: 350px;
+    height: 405px;
   }
   @media(max-width:625px){
     width: 50%;
-    height: 350px;
+    height: 380px;
   }
     @media(max-width:525px){
       width: 60%;
-      height: 350px;
+      height: 370px;
     }
 
   img{
@@ -80,7 +80,7 @@ const CardInfo = styled.div`
     margin: 12px;
     
   }
-  p{
+  h4{
     color: #fef6f6;
     line-height: 1.5;
     margin-bottom: 15px;
@@ -94,10 +94,11 @@ const CardInfo = styled.div`
           font-size:  10px;
         }
   }
-  span{
+  p{
     color: #fef6f6;
     font-size: 20px;
     font-weight: bold;
+    margin-bottom: 12px;
     @media(max-width:1024px){
           font-size: 18px;
         }
@@ -107,6 +108,28 @@ const CardInfo = styled.div`
         @media(max-width:625px){
           font-size:  14px;
         }
+  }
+  a{
+    
+    display: inline-block;
+                outline: 0;
+                cursor: pointer;
+                border: 2px solid #000;
+                border-radius: 3px;
+                color: #fff;
+                background: #000;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 28px;
+                padding: 12px 20px;
+                text-align:center;
+                transition-duration: .15s;
+                transition-property: all;
+                transition-timing-function: cubic-bezier(.4,0,.2,1);
+                &:hover{
+                    color: #000;
+                    background: rgb(255, 218, 87);
+                }            
   }
   `
 export default Card
