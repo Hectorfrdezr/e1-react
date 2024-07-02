@@ -32,7 +32,6 @@ const CardInfo = styled.div`
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
     width: 28%;
     height: 400px;
-    border: 1px red solid;
     cursor: pointer;
    
   &:hover{
