@@ -131,5 +131,6 @@ const CardInfo = styled.div`
                     background: rgb(255, 218, 87);
                 }            
   }
+  
   `
 export default Card

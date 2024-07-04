@@ -38,12 +38,18 @@ const Product = styled.div`
     max-width: 1200px;
     text-align: center;
     gap: 2rem;
+    @media(max-width:1025px){
+      h3{
+        font-size: 2rem;
+      }
+    }
     @media(max-width:980px){
     h3{
       font-size: 1rem;
     }
     h2{
       font-size: 1rem;
+      margin-bottom: 30px;
     }
     img{
       width: 32%;
@@ -91,6 +97,7 @@ const Product = styled.div`
   }
   h2{
     color: aliceblue;
+    margin-bottom: 24px;
   }
   a{
     

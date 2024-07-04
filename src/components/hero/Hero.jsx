@@ -42,6 +42,7 @@ const Heroinfo = styled.div`
         align-items: center;
         padding: 80px;
         border-radius: 8px;
+        margin-top: 88px;
     }
     h1{
         font-family: cursive;
@@ -60,6 +61,12 @@ const Heroinfo = styled.div`
         font-size: 2rem;
         margin-top: 120px;
         }
+        @media(max-width:376px){
+          font-size: 1.8rem;
+        }
+        @media(max-width:326px){
+          font-size: 1.4rem;
+        }
         }
     }
     h3{
@@ -77,6 +84,9 @@ const Heroinfo = styled.div`
         @media(max-width:625px){
           font-size:  1rem ;
         }
+        @media(max-width:325px){
+          font-size:  14px ;
+        }
     }  
     p{
         color: #fcfdfe;
@@ -92,6 +102,10 @@ const Heroinfo = styled.div`
         @media(max-width:625px){
           font-size:  1rem ;
         }
+        @media(max-width:325px){
+          font-size:  12px;
+        }
+        
 
     }
 `

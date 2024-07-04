@@ -23,7 +23,12 @@ const Categ = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    @media(max-width:325px){
+      padding: 2rem 0 0 0;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
   }
   .catego-container{
     padding: 3rem 1rem;
@@ -31,8 +36,7 @@ const Categ = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 1200px;
-    gap: 2rem;
+    gap: 3rem;
      @media(max-width:625px){
         flex-direction: column;
         justify-content: center;
@@ -44,6 +48,12 @@ const Categ = styled.div`
         text-align: center;
         padding: 12px;
       }
+      @media(max-width:325px){
+        a{
+          text-align: center;
+          padding: 2px;
+        }
+      }
     }
   h2{
     color: aliceblue;
@@ -51,8 +61,12 @@ const Categ = styled.div`
     text-align: left;
     padding: 0 0 0 85px ;
     cursor: pointer;
-    @media(max-width:980px){
+  @media(max-width:980px){
     text-align: center;
+    margin-right: 60px;
+  }
+  @media(max-width:780px){
+    font-size: 2.5rem;
   }
   @media(max-width:625px){
     font-size: 2rem;
@@ -60,10 +74,27 @@ const Categ = styled.div`
     @media(max-width:525px){
      font-size: 1.5rem;
     padding: 0 4px 0 0;
+    margin: 0;
+    }
+    @media(max-width:325px){
+     font-size: 20px;
+     margin: 0;
     }
   }
   h2:hover{
     color: #fcda30;
+  }
+  img{
+    width: 85%;
+    border-radius: 12px;
+  }
+  h3{
+    font-size: 1.2rem;
+  }
+  .catego.container:nth-child(2){
+    h3{
+      font-size: 3rem;
+    }
   }
    
 `
