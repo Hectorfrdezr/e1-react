@@ -12,9 +12,7 @@ function Ayuda() {
                 <a href="#">Historia</a>
                 <a href="#">Contáctanos</a>
             </div>
-            <div className="mapa">
             <img src={mapa} alt="" />
-            </div>
         </div>
     </Ayud>
   )
@@ -26,16 +24,44 @@ justify-content: space-between;
 .container{
     display: flex;
     justify-content: space-around;
-    border: 1px red solid;
+    @media(max-width:325px){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 .a-contain{
-    max-width:1200px;
     flex-direction: column;
+    display: flex;
+    margin-top:8rem;
+    gap: 3rem;
+
+    @media(max-width:625px){
+        margin: 2rem 0 0;
+    }
+    @media(max-width:325px){
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
 }
 img{
-    width: 80%;
+    width: 25%;
     border-radius: 12px;
     margin-top: 20px;
+    cursor: pointer;
+    &:hover{
+      box-shadow: 0 5px 15px rgba(247, 247, 245, 0.932);;
+    }
+    @media(max-width:625px){
+        width: auto;
+        height: 200px;
+    }
+    @media(max-width:325px){
+        width: 50%;
+    }
 }
 h2{
     font-size: 2rem;
@@ -52,6 +78,12 @@ a{
     color: aliceblue;
     text-align: left;
     font-size: 20px;
+    &:hover{
+        color:#fcda30 ;
+    }
+    @media(max-width:625px){
+        font-size: 14px;
+    }
 }
 ` 
 

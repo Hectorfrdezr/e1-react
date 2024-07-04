@@ -3,6 +3,7 @@ import Hero from './components/hero/Hero'
 import Productos from "../src/components/productos/Productos"
 import Categorias from './components/categorias/Categorias'
 import Ayuda from "./components/ayuda/Ayuda"
+import Footer from "./components/footer/Footer"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Categorias/>
       <Productos/>
       <Ayuda/>
+      <Footer/>
     </>
   )
 }
