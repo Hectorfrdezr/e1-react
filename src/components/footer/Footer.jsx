@@ -40,7 +40,7 @@ p{
   @media(max-width:625px){
         font-size: 12px;
       }
-      @media(max-width:375px){
+      @media(max-width:425px){
        font-size: 8px;
       }
 }
