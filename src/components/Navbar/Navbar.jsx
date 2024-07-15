@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import logo from "/img/logo.png.png"
 import Burger from "../menu/Burger"
+// import {Outlet,Link} from "react-router-dom"
 
 function Navbar() {
   return (
@@ -10,15 +11,16 @@ function Navbar() {
           <div className="header">
             <img className='nav-logo' src={logo} alt="" />
             <div className='links'>
-                <a href="#">Inicio</a>
-                <a href="#">Ofertas</a>
-                <a href="#">Conócenos</a>
+                <a href="/">Home</a>
+                <a href="">Categorias</a>
+                <a href="">About</a>
             </div>
             <div className="menu">
               <Burger/>
             </div>
           </div>  
         </NavContainer>
+        {/* <Outlet/> */}
         </>
   )
 }
