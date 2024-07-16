@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from "styled-components"
 
 function Card({title , description , imgSrc,precio , btn}){
@@ -25,14 +26,14 @@ function Card({title , description , imgSrc,precio , btn}){
 const CardInfo = styled.div`
   
     border-radius: 10px;
-    padding: 30px;
+    padding: 40px;
     position: relative;
     text-align: center;
     background-color: #151515;
     box-shadow: 0 5px 15px rgba(254, 254, 254, 0.1);
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
     width: 28%;
-    height: 450px;
+    height: 480px;
     cursor: pointer;
   &:hover{
     transform: translateY(-10px);
@@ -57,7 +58,7 @@ const CardInfo = styled.div`
     }
 
   img{
-    width: 100%;
+    width: 70%;
     object-fit:cover;
   }
   h3{    

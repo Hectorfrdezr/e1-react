@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '../card/Card'
+import CardHome from '../card/CardHome'
 import styled from 'styled-components'
 
 function Categorias() {
@@ -8,9 +8,9 @@ function Categorias() {
        <div className="container">
               <h2>Promociones y Ofertas</h2>
               <div className="catego-container">
-                    <Card title="PIDE TUS COMBOS FAVORITOS" btn="Ordenar" description="Elige el combo que mas te guste y disfrutalo en casa." imgSrc="/img/comida.png" />
-                    <Card title="TU BEBIDA FAVORITA" btn="Ordenar" description="Siempre para acompañar tu combo" imgSrc="/img/bebidas.png"  />
-                    <Card title="UN POSTRE" btn="Ordenar"  description="Nunca puede faltar para completar el dia." imgSrc="/img/helado.png" />                    
+                    <CardHome title="PIDE TUS COMBOS FAVORITOS" btn="Ordenar" description="Elige el combo que mas te guste y disfrutalo en casa." imgSrc="/img/comida.png" />
+                    <CardHome title="TU BEBIDA FAVORITA" btn="Ordenar" description="Siempre para acompañar tu combo" imgSrc="/img/bebidas.png"  />
+                    <CardHome title="UN POSTRE" btn="Ordenar"  description="Nunca puede faltar para completar el dia." imgSrc="/img/helado.png" />                    
                 </div>
             </div>
     </Categ>

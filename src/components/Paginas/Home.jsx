@@ -7,7 +7,7 @@ import Footer from './../footer/Footer';
 
 function Home() {
   return (
-    <>
+    <>  
         <Hero/>
         <Categorias/>
         <Productos/>
