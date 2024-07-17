@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import mapa from "../../../public/img/mapa.png"
+import { Link } from 'react-router-dom'
 
 function Ayuda() {
   return (
@@ -8,9 +9,9 @@ function Ayuda() {
             <h2>CONÓCENOS:</h2>
         <div className="container">
             <div className="a-contain">
-                <a href="#">Acerca de El Buen Sabor</a>
-                <a href="#">Historia</a>
-                <a href="#">Contáctanos</a>
+                <Link to="About">Acerca de El Buen Sabor</Link>
+                <Link to="About">Historia</Link>
+                <Link to="Registro">Contáctanos</Link>
             </div>
             <img src={mapa} alt="" />
         </div>

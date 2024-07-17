@@ -3,10 +3,11 @@ import { useState , useEffect } from 'react'
 import styled from 'styled-components'
 import logo from "/img/logo.png.png"
 import Burger from "../menu/Burger"
-import {Outlet,Link} from "react-router-dom"
+import {Outlet,Link, useLocation} from "react-router-dom"
 
 function Navbar() {
   const [ clicked , setClicked] =useState(false);
+  const location = useLocation();
 
   const handleClick = () => {
       setClicked(! clicked)
@@ -20,6 +21,10 @@ function Navbar() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    setClicked(false);
+  }, [location]);
 
   useEffect(() => {
     function handleScroll() {
@@ -39,6 +44,7 @@ function Navbar() {
                 <Link onClick={handleClick} to="/">Home</Link>
                 <Link onClick={handleClick} to="ProductList">Productos</Link>
                 <Link onClick={handleClick} to="Registro">Registrate</Link>
+                <Link onClick={handleClick} to="About">Sobre Nosotros</Link>
             </div>
               <div className="menu">
               <Burger clicked={clicked} handleClick={handleClick}/>  
@@ -121,7 +127,7 @@ const NavContainer = styled.nav`
   }
 `
 const Bg = styled.div`
-position: fixed;
+position: fixed ;
 background-color: #1d1f22;
 top: -1000px;
 left: -1000px;
