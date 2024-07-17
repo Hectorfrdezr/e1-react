@@ -1,94 +1,100 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Burger() {
+function Burger(props) {
   return (
     <MenuBurger>
-        <div className="three col">
-        <div className="hamburger" id="hamburger-5">
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
+        <div onClick={props.handleClick} className={`icon nav-icon-2 ${props.clicked ? "open":""}`}>
+              <span></span>
+              <span></span>
+              <span></span>
         </div>
-      </div>
     </MenuBurger>
   )
 }
 const MenuBurger = styled.div`
-    .row .three{
-  padding: 80px 30px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  text-align: center;
-}
-
-.hamburger .line{
-  width: 45px;
-  height: 5px;
-  background-color: #ecf0f1;
-  display: block;
-  margin: 8px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  @media (max-width: 658px){
-    width: 25px;
-    height: 3px;
-  }
-}
-
-.hamburger:hover{
-  cursor: pointer;
-}
-#hamburger-5.is-active{
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-#hamburger-5.is-active .line:nth-child(2){
-  -webkit-transition: none;
-  -o-transition: none;
-  transition: none;
-}
-
-#hamburger-5 .line:nth-child(2){
-  -webkit-transition-delay: 0.3s;
-  -o-transition-delay: 0.3s;
-  transition-delay: 0.3s;
-}
-
-
-#hamburger-5.is-active .line:nth-child(2){
-  opacity: 0;
-}
-
-#hamburger-5.is-active .line:nth-child(1),
-#hamburger-5.is-active .line:nth-child(3){
+.nav-icon-2{
   width: 35px;
-  -webkit-transform-origin: right;
-  -moz-transform-origin: right;
-  -ms-transform-origin: right;
-  -o-transform-origin: right;
-  transform-origin: right;
+  height: 30px;
+  margin: 10px 10px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
 }
-
-#hamburger-5.is-active .line:nth-child(1){
-  -webkit-transform: translateY(15px) rotate(45deg);
-  -ms-transform: translateY(15px) rotate(45deg);
-  -o-transform: translateY(15px) rotate(45deg);
-  transform: translateY(15px) rotate(45deg);
+.nav-icon-2 span{
+  background-color:#FFF;
+  position: absolute;
+  border-radius: 2px;
+  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
 }
-
-#hamburger-5.is-active .line:nth-child(3){
-  -webkit-transform: translateY(-15px) rotate(-45deg);
-  -ms-transform: translateY(-15px) rotate(-45deg);
-  -o-transform: translateY(-15px) rotate(-45deg);
-  transform: translateY(-15px) rotate(-45deg);
+.nav-icon-2 span:nth-child(1){
+  width: 100%;
+  height:  4px;
+  display: block;
+  top: 0px;
+  left: 0px;
+}
+.nav-icon-2 span:nth-child(2){
+  width: 100%;
+  height:  4px;
+  display: block;
+  top: 13px;
+  left: 0px;
+}
+.nav-icon-2 span:nth-child(3){
+  width: 100%;
+  height:  4px;
+  display: block;
+  bottom: 0px;
+  left: 0px;
+}
+.nav-icon-2:not(.open):hover span:nth-child(1){
+  width: 100%;
+  height:  4px;
+  display: block;
+  top: -2px;
+  left: 0px;
+  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+}
+.nav-icon-2:not(.open):hover span:nth-child(2){
+  width: 100%;
+  height:  4px;
+  display: block;
+  top: 13px;
+  left: 0px;
+  transition: .4s cubic-bezier(.8, .5, .2, 1.4);
+}
+.nav-icon-2:not(.open):hover span:nth-child(3){
+  width: 100%;
+  height:  4px;
+  display: block;
+  bottom: -2px;
+  left: 0px;
+  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+}
+.nav-icon-2.open span:nth-child(1){
+  left:3px;
+  top: 12px;
+  width: 30px;
+  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+  transform: rotate(90deg);
+  transition-delay: 150ms;
+}
+.nav-icon-2.open span:nth-child(2){
+  left:2px;
+  top: 20px;
+  width: 20px;
+  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+  transform: rotate(45deg);
+  transition-delay: 50ms;
+}
+.nav-icon-2.open span:nth-child(3){
+  left:14px;
+  top: 20px;
+  width: 20px;
+  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+  transform: rotate(-45deg);
+  transition-delay: 100ms;
 }
 
 `

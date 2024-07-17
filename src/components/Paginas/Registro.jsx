@@ -28,7 +28,6 @@ const Reg = styled.div`
     flex-direction: column;
     gap: 12px;
     height: 100vh;
-    
     form{
         display: flex;
         flex-direction: column;
@@ -40,6 +39,7 @@ const Reg = styled.div`
     }
     .formulario{
         width: 30%;
+        margin-top: 65px;
         height: auto;
         border-radius: 8px;
         padding: 20px 10px;
@@ -51,6 +51,7 @@ const Reg = styled.div`
         background:linear-gradient(#6c6a6a,#2f2c3f);
         @media(max-width:778px){
             width: 40%;
+            margin-top: 80px;
         }
         @media(max-width:525px){
             width: auto;
