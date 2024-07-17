@@ -9,9 +9,9 @@ function ProductList() {
           <h2>Comidas</h2>
         <div className="catego-container">
         <Card title="Hamburgesa Clasica" btn="5.99$" description="Carne jugosa, queso cheddar, lechuga y tomate." imgSrc="/img/th.png" />
-        <Card title="Hot dog" btn="3.99$" description="hotdog, queso cheddar, lechuga y tomate." imgSrc="/img/th 2.png" />
+        <Card title="Hot Dog" btn="3.99$" description="hotdog, queso cheddar, lechuga y tomate." imgSrc="/img/th 2.png" />
         <Card title="Pepito" btn="8.99$" description="Carne,Pollo,Tocino, queso, lechuga y tomate." imgSrc="/img/th 3.png" />
-        <Card title="Club house" btn="6.99$" description="pollo, queso, lechuga y tomate." imgSrc="/img/th 4.png" />
+        <Card title="Club house" btn="6.99$" description="Pollo, queso, lechuga y tomate." imgSrc="/img/th 4.png" />
         <Card title="Fajita" btn="4.99$" description="Carne,Pollo,Choclo, lechuga y tomate." imgSrc="/img/th 5.png" />
         <Card title="Patacon" btn="5.99$" description="Carne jugosa,Papas, lechuga y tomate." imgSrc="/img/th 6.png" />
         </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import pedido from "../../../public/img/pedido.png"
+import { Link } from 'react-router-dom'
 
 function Productos() {
   return (
@@ -13,7 +14,7 @@ function Productos() {
                 <h2>
                   ¡Haz tu pedido con un click!
                 </h2>
-                <a>Ordenar</a>
+                <Link to="Productlist">Ordenar</Link>
               </div>  
             </div>
           </div>
@@ -102,24 +103,25 @@ const Product = styled.div`
   a{
     
     display: inline-block;
-                outline: 0;
-                cursor: pointer;
-                border: 2px solid #000;
-                border-radius: 8px;
-                color: #fff;
-                background: #000;
-                font-size: 20px;
-                font-weight: 600;
-                line-height: 28px;
-                padding: 12px 20px;
-                text-align:center;
-                transition-duration: .15s;
-                transition-property: all;
-                transition-timing-function: cubic-bezier(.4,0,.2,1);
-                &:hover{
-                    color: #000;
-                    background: rgb(255, 218, 87);
-                }            
+    text-decoration:none;     
+    outline: 0;
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 8px;
+    color: #fff;
+    background: #000;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    padding: 12px 20px;
+    text-align:center;
+    transition-duration: .15s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    &:hover{
+      color: #000;
+      background: rgb(255, 218, 87);
+      }            
   }
     
 `
