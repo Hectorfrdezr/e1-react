@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 
-function Card({title , description , imgSrc,precio , btn}){
+function Card({title , description , imgSrc,precio , onAddToCart}){
 
   return (
     <CardInfo>
@@ -15,7 +15,7 @@ function Card({title , description , imgSrc,precio , btn}){
             <h3>{title}</h3>
             <h4>{description}</h4> 
             <p>{precio}</p>
-            <a>{btn}</a>
+            <button onClick={onAddToCart}>{btn}</button>
         </div>
         
     </CardInfo>

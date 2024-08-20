@@ -1,42 +1,79 @@
-import React from 'react'
-import Card from '../card/Card'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import Card from '../card/Card';
+import styled from 'styled-components';
+import products from '../data/products/';  // Importa los productos desde el archivo
+import Modal from '../modal/Modal';       // Asegúrate de tener un componente Modal
 
 function ProductList() {
+  const [cart, setCart] = useState([]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+  const [modalCallback, setModalCallback] = useState(null);
+
+  const addToCart = (product) => {
+    const existingItem = cart.find(item => item.title === product.title);
+    if (existingItem) {
+      setCart(cart.map(item =>
+        item.title === product.title
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      ));
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+  };
+
+  const removeFromCart = (productTitle) => {
+    setCart(cart.filter(item => item.title !== productTitle));
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const handleCheckout = () => {
+    setModalMessage('¿Desea finalizar la compra?');
+    setModalCallback(() => () => {
+      clearCart();
+      setIsModalVisible(false);
+    });
+    setIsModalVisible(true);
+  };
+
   return (
     <List>
       <div className="Listcontainer">
-          <h2>Comidas</h2>
-        <div className="catego-container">
-        <Card title="Hamburgesa Clasica" btn="5.99$" description="Carne jugosa, queso cheddar, lechuga y tomate." imgSrc="/img/th.png" />
-        <Card title="Hot Dog" btn="3.99$" description="hotdog, queso cheddar, lechuga y tomate." imgSrc="/img/th 2.png" />
-        <Card title="Pepito" btn="8.99$" description="Carne,Pollo,Tocino, queso, lechuga y tomate." imgSrc="/img/th 3.png" />
-        <Card title="Club house" btn="6.99$" description="Pollo, queso, lechuga y tomate." imgSrc="/img/th 4.png" />
-        <Card title="Fajita" btn="4.99$" description="Carne,Pollo,Choclo, lechuga y tomate." imgSrc="/img/th 5.png" />
-        <Card title="Patacon" btn="5.99$" description="Carne jugosa,Papas, lechuga y tomate." imgSrc="/img/th 6.png" />
-        </div>
-        <h2>Bebidas</h2>
-        <div className="catego-container">
-        <Card title="Bebidas de 1.ltr" btn="2.99$" description="Todos los sabores." imgSrc="/img/Refresco-de-sabores.png" />
-        <Card title="Bebidas Personal." btn="1.50$" description="Todos los sabores." imgSrc="/img/refresco-lata.png" />
-        <Card title="Bebidas de 1.ltr" btn="1.99$" description="Todos los sabores." imgSrc="/img/jugos.png" />
-        </div>
-        <h2>Helados</h2>
-        <div className="catego-container">
-        <Card title="Pezi Duri" btn="1.99$" description="Chocolate." imgSrc="/img/hl1.png" />
-        <Card title="M&Ms" btn="1.99$" description="Vainilla." imgSrc="/img/hl2.png" />
-        <Card title="Mora Alegre" btn="1.99$" description="Helado con trosos de mora." imgSrc="/img/hl3.png" />
-        <Card title="3 Sabores" btn="1.99$" description="Chocolate,vainilla y Fresa." imgSrc="/img/hl4.png" />
-        <Card title="Snickers" btn="1.99$" description="Chocolate con trosos de galleta." imgSrc="/img/hl5.png" />
-        <Card title="Colombina" btn="1.99$" description="Chocolate." imgSrc="/img/hl6.png" />
-        <Card title="Oreo" btn="1.99$" description="Vainilla con galleta chocolate." imgSrc="/img/hl7.png" />
-        <Card title="Menta granisada" btn="1.99$" description="helado con sabor a menta." imgSrc="/img/hl8.png" />
-        </div>
-    </div>
-  </List>
-  )
-}
+        {['Comidas', 'Bebidas', 'Helados'].map(category => (
+          <div key={category}>
+            <h2>{category}</h2>
+            <div className="catego-container">
+              {products
+                .filter(product => product.category === category)
+                .map(product => (
+                  <Card
+                    key={product.id}
+                    title={product.title}
+                    btn={`${product.price}$`}
+                    description={product.description}
+                    imgSrc={product.imgSrc}
+                    onAddToCart={() => addToCart(product)}
+                  />
+                ))}
+            </div>
+          </div>
+        ))}
+      </div>
 
+      {/* Modal para confirmaciones */}
+      <Modal 
+        message={modalMessage}
+        isVisible={isModalVisible}
+        onConfirm={modalCallback}
+        onClose={() => setIsModalVisible(false)}
+      />
+    </List>
+  );
+}
 const List = styled.div`
   display: flex;
   width: 100%;
