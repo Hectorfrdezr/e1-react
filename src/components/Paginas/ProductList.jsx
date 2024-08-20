@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Card from '../card/Card';
 import styled from 'styled-components';
-import products from '../data/products/';  // Importa los productos desde el archivo
-import Modal from '../modal/Modal';       // Asegúrate de tener un componente Modal
+import products from '../data/products/';  
+import Modal from '../modal/Modal';       
 
 function ProductList() {
   const [cart, setCart] = useState([]);

@@ -128,7 +128,7 @@ const products = [
     category: "Helados"
     },
     {
-    id: 13,
+    id: 17,
     title: "Menta granisada",
     price: 1.99,
     description: "helado con sabor a menta.",
