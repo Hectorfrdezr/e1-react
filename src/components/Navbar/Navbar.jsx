@@ -60,12 +60,14 @@ function Navbar() {
               <Burger clicked={clicked} handleClick={handleClick}/>  
             </div> 
             <div className="cart">
-              <FaShoppingCart size={24} onClick={toggleCart}/>
+              <ShoppingCartIcon size={24} onClick={toggleCart}/>
               {cartItems.length > 0 && <span>{cartItems.length}</span>}
           </div>
          </div>  
           <Bg className={`initial ${clicked ? "active" : ""}`}></Bg>
         </NavContainer>
+
+        {cartVisible && <Overlay onClick={toggleCart} />}
 
         <CartDropdown visible={cartVisible}>
         <h2>Tu Carrito</h2>
@@ -75,8 +77,13 @@ function Navbar() {
           <>
             <ul>
               {cartItems.map(item => (
-                <li key={item.id}>
-                  {item.title} - {item.quantity} x {item.price}$
+                <li key={item.id} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                   <img 
+                    src={item.imgSrc} 
+                    alt={item.title} 
+                    style={{ width: '50px', height: '50px', marginRight: '10px' }} 
+                    />
+                   {item.title} - {item.quantity} x {item.price}$
                   <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
                 </li>
               ))}
@@ -106,7 +113,7 @@ const NavContainer = styled.nav`
     padding: 0px 45px;
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 999;
   }
   a{
     color: #fff;
@@ -125,6 +132,7 @@ const NavContainer = styled.nav`
   }
   .cart {
       position: relative;
+     
       a {
         color: white;
         text-decoration: none;
@@ -134,8 +142,8 @@ const NavContainer = styled.nav`
         position: absolute;
         top: -8px;
         right: -10px;
-        background-color: red;
-        color: white;
+        background-color: rgb(255, 218, 87);
+        color: #111010;
         border-radius: 50%;
         padding: 2px 6px;
         font-size: 12px;
@@ -152,7 +160,7 @@ const NavContainer = styled.nav`
       margin-left: auto;
       margin-right: auto;
       text-align: center;
-      transition: all .5s ease;
+      transition: all .10s ease;
       right: 0;
       a{
         font-size: 2rem;
@@ -188,40 +196,54 @@ const CartDropdown = styled.div.attrs(props => ({
 }))`
   position: fixed;
   right: 0;
-  top: 60px; /* Ajusta este valor según la altura de tu navbar */
+  top: 60px;
   width: 300px;
-  background-color: white;
+  background-color: #272626;
   border: 1px solid #ccc;
+  border-radius: 0 0 8px 8px ;
   padding: 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
+  box-shadow: 0 2px 10px rgba(0, 0,0, 0.1);
   transition: transform 0.3s ease-in-out;
   z-index: 999;
   h2 {
     margin-bottom: 1rem;
+    color: #ccc;
   }
   ul {
     list-style: none;
     padding: 0;
+    font-weight: 100;
+    color: #ccc;
     li {
       margin-bottom: 1rem;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       button {
         background: none;
         border: none;
-        color: red;
+        padding: 0.2rem 0.5rem;
+        color: rgba(255, 218, 87);
         cursor: pointer;
-      }
-    }
+        &:hover {
+          background-color: rgba(255, 218, 87, 0.2);
+          border-radius: 5px;
+            }
+          }
+        }
   }
   button {
     width: 100%;
     padding: 0.5rem;
-    background-color: red;
-    color: white;
+    background-color: rgb(255, 218, 87);
+    color: #0b0b0b;
     border: none;
+    font-weight: bold;
+    border-radius: 5px;
     cursor: pointer;
+    &:hover {
+      background-color: rgba(255, 218, 87, 0.8); /* Fondo más claro al pasar el ratón */
+    }
   }
 `;
 const Bg = styled.div`
@@ -232,7 +254,7 @@ left: -1000px;
 width: 100%;
 height: 100%;
 z-index: 1;
-transition: all .6s ease;
+transition: all .7s ease;
   &.active{
     top:0;
     left: 0;
@@ -241,5 +263,22 @@ transition: all .6s ease;
   border-radius: 0 0 40% 0;
   }
 `
+const ShoppingCartIcon = styled(FaShoppingCart)`
+  color: white; 
+  cursor: pointer;
+  &:hover {
+    color: #ccc; 
+  }`
+  const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px); 
+  z-index: 708; 
+  cursor: pointer;
+`;
 
 export default Navbar

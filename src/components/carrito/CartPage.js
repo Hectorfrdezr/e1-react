@@ -13,14 +13,15 @@ function CartPage() {
         <>
           <ul>
             {cartItems.map(item => (
-              <li key={item.id}>
-                {item.title} - {item.quantity} x {item.price}$
+             <li key={item.id} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+                <img src={item.imgSrc} alt={item.title} style={{ width: '50px', height: '50px', marginRight: '10px' }}/>
                 <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
               </li>
             ))}
           </ul>
           <button onClick={clearCart}>Vaciar Carrito</button>
         </>
+        
       )}
     </div>
   );
